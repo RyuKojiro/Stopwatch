@@ -79,6 +79,8 @@
 	
 	[_lastSplit release];
 	_lastSplit = [[NSDate alloc] init];
+	
+	self.splitTimeLabel.text = @"Δ 00:00:00";
 }
 
 - (IBAction)reset:(id)sender {
