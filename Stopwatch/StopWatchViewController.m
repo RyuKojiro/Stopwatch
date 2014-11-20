@@ -76,6 +76,7 @@
 	
 	newSplit.start = _lastSplit;
 	newSplit.end = [NSDate date];
+	newSplit.reference = _startTime;
 	
 	[_splits addObject:newSplit];
 	[self.tableView reloadData];

@@ -12,7 +12,9 @@
 
 @property (retain) NSDate *start;
 @property (retain) NSDate *end;
+@property (retain) NSDate *reference;
 
 - (NSTimeInterval) duration;
+- (NSTimeInterval) timeIntervalSinceReferenceDate;
 
 @end
