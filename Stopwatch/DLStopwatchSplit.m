@@ -21,4 +21,8 @@
 	return [self.end timeIntervalSinceDate:self.start];
 }
 
+- (NSTimeInterval) timeIntervalSinceReferenceDate {
+	return [self.end timeIntervalSinceDate:self.reference];
+}
+
 @end
