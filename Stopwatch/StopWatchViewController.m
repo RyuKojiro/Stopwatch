@@ -23,6 +23,7 @@
 }
 
 - (void) dealloc {
+	[_lastSplit release];
 	[_splits release];
 	[_startTime release];
 	[super dealloc];
@@ -74,6 +75,9 @@
 	[_splits insertObject:newSplit atIndex:0];
 	[self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
 	[newSplit release];
+	
+	[_lastSplit release];
+	_lastSplit = [[NSDate alloc] init];
 }
 
 - (IBAction)reset:(id)sender {
@@ -113,7 +117,7 @@
 	cell.textLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
 	
 	NSTimeInterval totalTime = [(DLStopwatchSplit *)_splits[indexPath.row] timeIntervalSinceReferenceDate];
-	cell.detailTextLabel.text = [DLStopwatchSplit threePartStringForInterval:totalTime];
+	cell.detailTextLabel.text = [@"Σ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:totalTime]];
 	
 	return cell;
 }
