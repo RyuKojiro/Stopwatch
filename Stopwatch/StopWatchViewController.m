@@ -110,7 +110,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSplitCellReuseIdentifier];
 	if (!cell) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kSplitCellReuseIdentifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:kSplitCellReuseIdentifier] autorelease];
 	}
 	
 	NSTimeInterval splitTime = [(DLStopwatchSplit *)_splits[indexPath.row] duration];
