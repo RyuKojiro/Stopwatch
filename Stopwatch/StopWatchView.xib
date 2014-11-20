@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="splitTimeLabel" destination="kUv-gy-tQj" id="Ke5-7E-i0y"/>
                 <outlet property="startStopButton" destination="i4y-R3-IHw" id="ema-4i-7XN"/>
+                <outlet property="tableView" destination="5BP-Wa-7yP" id="l0A-qX-ibN"/>
                 <outlet property="totalTimeLabel" destination="c36-HP-QBi" id="TNr-7e-5qp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="d4c-E6-ueX"/>
             </connections>
@@ -60,6 +61,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5BP-Wa-7yP">
                     <rect key="frame" x="0.0" y="170" width="600" height="386"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="nmr-gJ-AdG"/>
+                        <outlet property="delegate" destination="-1" id="9k7-Fj-Q4X"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
