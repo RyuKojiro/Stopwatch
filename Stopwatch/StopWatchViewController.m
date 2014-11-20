@@ -19,10 +19,12 @@
 	BOOL _running;
 	NSDate *_startTime;
 	NSDate *_lastSplit;
+	NSDate *_lastStop;
 	NSMutableArray *_splits;
 }
 
 - (void) dealloc {
+	[_lastStop release];
 	[_lastSplit release];
 	[_splits release];
 	[_startTime release];
@@ -65,13 +67,32 @@
 		[_lastSplit release];
 
 		_lastSplit = [[NSDate alloc] init];
+		
+		// This means the start and stop are no longer associated
+		[_lastStop release];
+		_lastStop = nil;
 	}
 	
 	_running = !_running;
 	[self updateUIForStartness];
 	
 	if (_running) {
+		if (_lastStop) {
+			NSTimeInterval stoppedDuration = [[NSDate date] timeIntervalSinceDate:_lastStop];
+			
+			NSDate *tmp = _startTime;
+			_startTime = [[_startTime dateByAddingTimeInterval:stoppedDuration] retain];
+			[tmp release];
+			
+			tmp = _lastSplit;
+			_lastSplit = [[_lastSplit dateByAddingTimeInterval:stoppedDuration] retain];
+			[tmp release];
+		}
+		
 		[self _updateDisplay];
+	}
+	else {
+		_lastStop = [[NSDate alloc] init];
 	}
 }
 
