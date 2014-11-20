@@ -43,7 +43,7 @@
 	NSTimeInterval splitTime = abs([_lastSplit timeIntervalSinceNow]);
 	self.splitTimeLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
 	if (_running) {
-		[self performSelector:_cmd withObject:nil afterDelay:1.0f];
+		[self performSelector:_cmd withObject:nil afterDelay:0.3f]; // 3 updates per second so that strangely offset splits update more accurately
 	}
 }
 
@@ -110,7 +110,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSplitCellReuseIdentifier];
 	if (!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kSplitCellReuseIdentifier];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kSplitCellReuseIdentifier] autorelease];
 	}
 	
 	NSTimeInterval splitTime = [(DLStopwatchSplit *)_splits[indexPath.row] duration];
