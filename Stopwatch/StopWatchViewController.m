@@ -9,6 +9,8 @@
 #import "StopWatchViewController.h"
 #import "DLStopwatchSplit.h"
 
+#define kSplitCellReuseIdentifier @"defaultCell"
+
 @interface StopWatchViewController ()
 
 @end
@@ -105,7 +107,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell" forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSplitCellReuseIdentifier];
+	if (!cell) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSplitCellReuseIdentifier];
+	}
+	
 	
 	cell.textLabel.text = [(DLStopwatchSplit *)_splits[indexPath.row] description];
 	
