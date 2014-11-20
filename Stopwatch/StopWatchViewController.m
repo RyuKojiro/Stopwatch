@@ -13,7 +13,10 @@
 @end
 
 @implementation StopWatchViewController {
-	NSMutableArray *splits;
+	BOOL _running;
+	NSDate *_startTime;
+	NSDate *_lastSplit;
+	NSMutableArray *_splits;
 }
 
 - (void)viewDidLoad {
@@ -24,6 +27,20 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (IBAction)startStop:(id)sender {
+	_running = !_running;
+	self.startStopButton.title = _running ? @"Stop" : @"Start";
+}
+
+- (IBAction)split:(id)sender {
+	
+}
+
+- (IBAction)reset:(id)sender {
+	[_startTime release];
+	_startTime = [[NSDate alloc] init];
 }
 
 @end
