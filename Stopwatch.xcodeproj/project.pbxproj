@@ -14,6 +14,7 @@
 		E60ADA181A1D7E8800FA1E0B /* StopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA171A1D7E8800FA1E0B /* StopwatchTests.m */; };
 		E60ADA221A1D7EE400FA1E0B /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA211A1D7EE400FA1E0B /* Main.xib */; };
 		E60ADA241A1D7FD000FA1E0B /* StopWatchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */; };
+		E60ADA2A1A1D88DF00FA1E0B /* DLStopwatchSplit.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA291A1D88DF00FA1E0B /* DLStopwatchSplit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		E60ADA171A1D7E8800FA1E0B /* StopwatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopwatchTests.m; sourceTree = "<group>"; };
 		E60ADA211A1D7EE400FA1E0B /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
 		E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopWatchView.xib; sourceTree = "<group>"; };
+		E60ADA281A1D88DF00FA1E0B /* DLStopwatchSplit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLStopwatchSplit.h; sourceTree = "<group>"; };
+		E60ADA291A1D88DF00FA1E0B /* DLStopwatchSplit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLStopwatchSplit.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				E60AD9FB1A1D7E8800FA1E0B /* Supporting Files */,
 				E60ADA211A1D7EE400FA1E0B /* Main.xib */,
 				E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */,
+				E60ADA281A1D88DF00FA1E0B /* DLStopwatchSplit.h */,
+				E60ADA291A1D88DF00FA1E0B /* DLStopwatchSplit.m */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			files = (
 				E60ADA041A1D7E8800FA1E0B /* StopWatchViewController.m in Sources */,
 				E60ADA011A1D7E8800FA1E0B /* AppDelegate.m in Sources */,
+				E60ADA2A1A1D88DF00FA1E0B /* DLStopwatchSplit.m in Sources */,
 				E60AD9FE1A1D7E8800FA1E0B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +397,7 @@
 				E60ADA1D1A1D7E8800FA1E0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60ADA1E1A1D7E8800FA1E0B /* Build configuration list for PBXNativeTarget "StopwatchTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +406,7 @@
 				E60ADA201A1D7E8800FA1E0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
