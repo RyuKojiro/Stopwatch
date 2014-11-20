@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StopWatchViewController : UIViewController
+@interface StopWatchViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (assign) IBOutlet UILabel *totalTimeLabel;
 @property (assign) IBOutlet UILabel *splitTimeLabel;
 @property (assign) IBOutlet UIBarButtonItem *startStopButton;
+@property (assign) IBOutlet UITableView *tableView;
 
 - (IBAction)startStop:(id)sender;
 - (IBAction)split:(id)sender;

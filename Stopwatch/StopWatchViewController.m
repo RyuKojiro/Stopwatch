@@ -7,6 +7,7 @@
 //
 
 #import "StopWatchViewController.h"
+#import "DLStopwatchSplit.h"
 
 @interface StopWatchViewController ()
 
@@ -66,7 +67,10 @@
 }
 
 - (IBAction)split:(id)sender {
+	DLStopwatchSplit *newSplit = [[DLStopwatchSplit alloc] init];
 	
+	[_splits addObject:newSplit];
+	[newSplit release];
 }
 
 - (IBAction)reset:(id)sender {
@@ -81,6 +85,24 @@
 
 	self.totalTimeLabel.text = @"00:00:00";
 	self.splitTimeLabel.text = @"Δ 00:00:00";
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+	return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [_splits count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell" forIndexPath:indexPath];
+	
+	// Configure the cell...
+	
+	return cell;
 }
 
 @end
