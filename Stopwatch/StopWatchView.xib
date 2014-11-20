@@ -7,6 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StopWatchViewController">
             <connections>
+                <outlet property="splitTimeLabel" destination="kUv-gy-tQj" id="Ke5-7E-i0y"/>
+                <outlet property="startStopButton" destination="i4y-R3-IHw" id="ema-4i-7XN"/>
+                <outlet property="totalTimeLabel" destination="c36-HP-QBi" id="TNr-7e-5qp"/>
                 <outlet property="view" destination="iN0-l3-epB" id="d4c-E6-ueX"/>
             </connections>
         </placeholder>
@@ -19,11 +22,23 @@
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zp2-zL-6Uw"/>
-                        <barButtonItem title="Start" id="i4y-R3-IHw"/>
+                        <barButtonItem title="Start" id="i4y-R3-IHw">
+                            <connections>
+                                <action selector="startStop:" destination="-1" id="1j3-Al-dnF"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cov-dE-X9E"/>
-                        <barButtonItem title="Split" id="0Wk-2u-xfs"/>
+                        <barButtonItem title="Split" id="0Wk-2u-xfs">
+                            <connections>
+                                <action selector="split:" destination="-1" id="cwO-6G-bJA"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="wGC-j3-jqy"/>
-                        <barButtonItem title="Reset" id="XBr-Ar-HjB"/>
+                        <barButtonItem title="Reset" id="XBr-Ar-HjB">
+                            <connections>
+                                <action selector="reset:" destination="-1" id="bbP-TG-s2A"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0Bg-yx-ADU"/>
                     </items>
                 </toolbar>
