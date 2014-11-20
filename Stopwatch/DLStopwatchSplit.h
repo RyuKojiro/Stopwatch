@@ -17,4 +17,6 @@
 - (NSTimeInterval) duration;
 - (NSTimeInterval) timeIntervalSinceReferenceDate;
 
++ (NSString *) threePartStringForInterval:(NSTimeInterval)interval;
+
 @end

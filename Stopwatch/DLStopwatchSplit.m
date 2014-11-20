@@ -10,6 +10,13 @@
 
 @implementation DLStopwatchSplit
 
++ (NSString *) threePartStringForInterval:(NSTimeInterval)interval {
+	return [NSString stringWithFormat:@"%02lu:%02lu:%02lu",
+										(NSUInteger)(interval / 360) % 60,	// H
+										(NSUInteger)(interval / 60) % 60,	// M
+										(NSUInteger)interval % 60];			// S
+}
+
 - (NSTimeInterval) duration {
 	return [self.end timeIntervalSinceDate:self.start];
 }
