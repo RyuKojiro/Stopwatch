@@ -37,17 +37,10 @@
 
 - (void) _updateDisplay {
 	NSTimeInterval totalTime = abs([_startTime timeIntervalSinceNow]);
-	self.totalTimeLabel.text = [NSString stringWithFormat:@"%02lu:%02lu:%02lu",
-								(NSUInteger)(totalTime / 360) % 60,	// H
-								(NSUInteger)(totalTime / 60) % 60,	// M
-								(NSUInteger)totalTime % 60];		// S
+	self.totalTimeLabel.text = [DLStopwatchSplit threePartStringForInterval:totalTime];
 	
 	NSTimeInterval splitTime = abs([_lastSplit timeIntervalSinceNow]);
-	self.splitTimeLabel.text = [NSString stringWithFormat:@"Δ %02lu:%02lu:%02lu",
-								(NSUInteger)(splitTime / 360) % 60,	// H
-								(NSUInteger)(splitTime / 60) % 60,	// M
-								(NSUInteger)splitTime % 60];		// S
-	
+	self.splitTimeLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
 	if (_running) {
 		[self performSelector:_cmd withObject:nil afterDelay:1.0f];
 	}
@@ -113,11 +106,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kSplitCellReuseIdentifier];
 	if (!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSplitCellReuseIdentifier];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kSplitCellReuseIdentifier];
 	}
 	
+	NSTimeInterval splitTime = [(DLStopwatchSplit *)_splits[indexPath.row] duration];
+	cell.textLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
 	
-	cell.textLabel.text = [(DLStopwatchSplit *)_splits[indexPath.row] description];
+	NSTimeInterval totalTime = [(DLStopwatchSplit *)_splits[indexPath.row] timeIntervalSinceReferenceDate];
+	cell.detailTextLabel.text = [DLStopwatchSplit threePartStringForInterval:totalTime];
 	
 	return cell;
 }
