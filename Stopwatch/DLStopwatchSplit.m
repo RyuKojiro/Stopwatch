@@ -13,14 +13,14 @@
 + (NSString *) threePartStringForInterval:(NSTimeInterval)interval {
 	return [NSString stringWithFormat:@"%02u:%02u:%02u",
 										(unsigned int)(interval / 360) % 60,	// H
-										(unsigned int)(interval / 60) % 60,	// M
+										(unsigned int)(interval / 60) % 60,		// M
 										(unsigned int)interval % 60];			// S
 }
 
 + (NSString *) precisionStringForInterval:(NSTimeInterval)interval {
 	return [NSString stringWithFormat:@"%02u:%02u:%02u.%03u",
 			(unsigned int)(interval / 360) % 60,		// H
-			(unsigned int)(interval / 60) % 60,		// M
+			(unsigned int)(interval / 60) % 60,			// M
 			(unsigned int)interval % 60,				// S
 			(unsigned int)(interval * 1000) % 1000];	// ms
 }
