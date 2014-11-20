@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StopWatchViewController">
@@ -14,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bxV-bR-EJY">
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bxV-bR-EJY">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="zp2-zL-6Uw"/>
@@ -26,8 +27,41 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="0Bg-yx-ADU"/>
                     </items>
                 </toolbar>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="c36-HP-QBi">
+                    <rect key="frame" x="8" y="8" width="584" height="125"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="125" id="hTk-mk-xKI"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="128"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Δ 00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kUv-gy-tQj">
+                    <rect key="frame" x="259" y="141" width="83" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5BP-Wa-7yP">
+                    <rect key="frame" x="0.0" y="170" width="600" height="386"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="5BP-Wa-7yP" firstAttribute="top" secondItem="kUv-gy-tQj" secondAttribute="bottom" constant="8" id="9HQ-su-8Ie"/>
+                <constraint firstAttribute="trailing" secondItem="bxV-bR-EJY" secondAttribute="trailing" id="JJg-vV-xgd"/>
+                <constraint firstItem="kUv-gy-tQj" firstAttribute="centerX" secondItem="bxV-bR-EJY" secondAttribute="centerX" id="RGa-5v-cvE"/>
+                <constraint firstItem="kUv-gy-tQj" firstAttribute="centerX" secondItem="c36-HP-QBi" secondAttribute="centerX" id="SOC-5b-eC6"/>
+                <constraint firstItem="bxV-bR-EJY" firstAttribute="top" secondItem="5BP-Wa-7yP" secondAttribute="bottom" id="but-oY-7wj"/>
+                <constraint firstItem="c36-HP-QBi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="djj-Ol-hZd"/>
+                <constraint firstAttribute="centerX" secondItem="5BP-Wa-7yP" secondAttribute="centerX" id="eIu-wr-Ev9"/>
+                <constraint firstAttribute="bottom" secondItem="bxV-bR-EJY" secondAttribute="bottom" id="f6d-GC-BKY"/>
+                <constraint firstItem="kUv-gy-tQj" firstAttribute="top" secondItem="c36-HP-QBi" secondAttribute="bottom" constant="8" symbolic="YES" id="j4B-Sd-9bk"/>
+                <constraint firstItem="bxV-bR-EJY" firstAttribute="width" secondItem="5BP-Wa-7yP" secondAttribute="width" id="lYc-n0-qIl"/>
+                <constraint firstItem="c36-HP-QBi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" id="u4R-vB-kLL"/>
+                <constraint firstItem="bxV-bR-EJY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="udg-Je-tFc"/>
+            </constraints>
         </view>
     </objects>
 </document>
