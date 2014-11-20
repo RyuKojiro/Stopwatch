@@ -59,6 +59,7 @@
 	
 	_running = !_running;
 	self.startStopButton.title = _running ? @"Stop" : @"Start";
+	self.splitButton.enabled = _running;
 	
 	if (_running) {
 		[self _updateDisplay];

@@ -13,6 +13,7 @@
 @property (assign) IBOutlet UILabel *totalTimeLabel;
 @property (assign) IBOutlet UILabel *splitTimeLabel;
 @property (assign) IBOutlet UIBarButtonItem *startStopButton;
+@property (assign) IBOutlet UIBarButtonItem *splitButton;
 @property (assign) IBOutlet UITableView *tableView;
 
 - (IBAction)startStop:(id)sender;

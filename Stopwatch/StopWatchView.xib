@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StopWatchViewController">
             <connections>
+                <outlet property="splitButton" destination="0Wk-2u-xfs" id="Bkh-4l-sSB"/>
                 <outlet property="splitTimeLabel" destination="kUv-gy-tQj" id="Ke5-7E-i0y"/>
                 <outlet property="startStopButton" destination="i4y-R3-IHw" id="ema-4i-7XN"/>
                 <outlet property="tableView" destination="5BP-Wa-7yP" id="l0A-qX-ibN"/>
@@ -29,7 +30,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="cov-dE-X9E"/>
-                        <barButtonItem title="Split" id="0Wk-2u-xfs">
+                        <barButtonItem enabled="NO" title="Split" id="0Wk-2u-xfs">
                             <connections>
                                 <action selector="split:" destination="-1" id="cwO-6G-bJA"/>
                             </connections>
