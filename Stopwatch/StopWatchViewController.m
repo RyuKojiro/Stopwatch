@@ -78,8 +78,8 @@
 	newSplit.end = [NSDate date];
 	newSplit.reference = _startTime;
 	
-	[_splits addObject:newSplit];
-	[self.tableView reloadData];
+	[_splits insertObject:newSplit atIndex:0];
+	[self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationTop];
 	[newSplit release];
 }
 
