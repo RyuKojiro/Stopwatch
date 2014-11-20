@@ -43,7 +43,7 @@
 	NSTimeInterval splitTime = abs([_lastSplit timeIntervalSinceNow]);
 	self.splitTimeLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
 	if (_running) {
-		[self performSelector:_cmd withObject:nil afterDelay:0.3f]; // 3 updates per second so that strangely offset splits update more accurately
+		[self performSelector:_cmd withObject:nil afterDelay:0.1f]; // 10 updates per second so that strangely offset splits update more accurately
 	}
 }
 
