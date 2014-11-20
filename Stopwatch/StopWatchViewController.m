@@ -52,14 +52,23 @@
 	// Dispose of any resources that can be recreated.
 }
 
+- (void) updateUIForStartness {
+	self.startStopButton.title = _running ? @"Stop" : @"Start";
+	self.splitButton.enabled = _running;
+}
+
 - (IBAction)startStop:(id)sender {
 	if (!_startTime) {
-		[self reset:sender];
+		_startTime = [[NSDate alloc] init];
+		
+		// Just in case
+		[_lastSplit release];
+
+		_lastSplit = [[NSDate alloc] init];
 	}
 	
 	_running = !_running;
-	self.startStopButton.title = _running ? @"Stop" : @"Start";
-	self.splitButton.enabled = _running;
+	[self updateUIForStartness];
 	
 	if (_running) {
 		[self _updateDisplay];
@@ -85,13 +94,13 @@
 
 - (IBAction)reset:(id)sender {
 	_running = NO;
-	self.startStopButton.title = @"Start";
+	[self updateUIForStartness];
 
 	[_startTime release];
-	_startTime = [[NSDate alloc] init];
+	_startTime = nil;
 	
 	[_lastSplit release];
-	_lastSplit = [[NSDate alloc] init];
+	_lastSplit = nil;
 
 	[_splits removeAllObjects];
 	[self.tableView reloadData];
