@@ -103,7 +103,8 @@
 	_lastSplit = nil;
 
 	[_splits removeAllObjects];
-	[self.tableView reloadData];
+	[self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+				  withRowAnimation:UITableViewRowAnimationLeft];
 	
 	self.totalTimeLabel.text = @"00:00:00";
 	self.splitTimeLabel.text = @"Δ 00:00:00";
