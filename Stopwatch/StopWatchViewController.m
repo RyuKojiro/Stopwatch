@@ -36,7 +36,7 @@
 								(NSUInteger)(totalTime / 60) % 60,	// M
 								(NSUInteger)totalTime % 60];		// S
 	
-	NSTimeInterval splitTime = [_lastSplit timeIntervalSinceNow];
+	NSTimeInterval splitTime = abs([_lastSplit timeIntervalSinceNow]);
 	self.splitTimeLabel.text = [NSString stringWithFormat:@"Δ %02lu:%02lu:%02lu",
 								(NSUInteger)(splitTime / 360) % 60,	// H
 								(NSUInteger)(splitTime / 60) % 60,	// M
@@ -71,7 +71,8 @@
 
 - (IBAction)reset:(id)sender {
 	_running = NO;
-	
+	self.startStopButton.title = @"Start";
+
 	[_startTime release];
 	_startTime = [[NSDate alloc] init];
 	
