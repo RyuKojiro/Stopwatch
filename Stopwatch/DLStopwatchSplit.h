@@ -18,5 +18,6 @@
 - (NSTimeInterval) timeIntervalSinceReferenceDate;
 
 + (NSString *) threePartStringForInterval:(NSTimeInterval)interval;
++ (NSString *) precisionStringForInterval:(NSTimeInterval)interval;
 
 @end

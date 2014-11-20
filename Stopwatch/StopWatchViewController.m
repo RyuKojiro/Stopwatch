@@ -115,10 +115,10 @@
 	}
 	
 	NSTimeInterval splitTime = [(DLStopwatchSplit *)_splits[indexPath.row] duration];
-	cell.textLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:splitTime]];
+	cell.textLabel.text = [@"Δ " stringByAppendingString:[DLStopwatchSplit precisionStringForInterval:splitTime]];
 	
 	NSTimeInterval totalTime = [(DLStopwatchSplit *)_splits[indexPath.row] timeIntervalSinceReferenceDate];
-	cell.detailTextLabel.text = [@"Σ " stringByAppendingString:[DLStopwatchSplit threePartStringForInterval:totalTime]];
+	cell.detailTextLabel.text = [@"Σ " stringByAppendingString:[DLStopwatchSplit precisionStringForInterval:totalTime]];
 	
 	return cell;
 }
