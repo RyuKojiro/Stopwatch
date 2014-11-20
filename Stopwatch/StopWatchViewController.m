@@ -12,7 +12,9 @@
 
 @end
 
-@implementation StopWatchViewController
+@implementation StopWatchViewController {
+	NSMutableArray *splits;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];

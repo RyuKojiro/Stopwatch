@@ -10,6 +10,13 @@
 
 @interface StopWatchViewController : UIViewController
 
+@property (assign) UILabel *totalTimeLabel;
+@property (assign) UILabel *splitTimeLabel;
+@property (assign) UIButton *startStopButton;
+
+- (IBAction)startStop:(id)sender;
+- (IBAction)split:(id)sender;
+- (IBAction)reset:(id)sender;
 
 @end
 
