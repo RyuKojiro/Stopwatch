@@ -21,6 +21,7 @@
 }
 
 - (void) dealloc {
+	[_splits release];
 	[_startTime release];
 	[super dealloc];
 }
@@ -28,6 +29,8 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	_running = NO;
+	
+	_splits = [[NSMutableArray alloc] init];
 }
 
 - (void) _updateDisplay {
@@ -69,7 +72,11 @@
 - (IBAction)split:(id)sender {
 	DLStopwatchSplit *newSplit = [[DLStopwatchSplit alloc] init];
 	
+	newSplit.start = _lastSplit;
+	newSplit.end = [NSDate date];
+	
 	[_splits addObject:newSplit];
+	[self.tableView reloadData];
 	[newSplit release];
 }
 
@@ -100,7 +107,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell" forIndexPath:indexPath];
 	
-	// Configure the cell...
+	cell.textLabel.text = [(DLStopwatchSplit *)_splits[indexPath.row] description];
 	
 	return cell;
 }
