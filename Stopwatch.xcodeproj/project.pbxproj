@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		E60AD9FE1A1D7E8800FA1E0B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E60AD9FD1A1D7E8800FA1E0B /* main.m */; };
 		E60ADA011A1D7E8800FA1E0B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA001A1D7E8800FA1E0B /* AppDelegate.m */; };
-		E60ADA041A1D7E8800FA1E0B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA031A1D7E8800FA1E0B /* ViewController.m */; };
-		E60ADA071A1D7E8800FA1E0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA051A1D7E8800FA1E0B /* Main.storyboard */; };
+		E60ADA041A1D7E8800FA1E0B /* StopWatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA031A1D7E8800FA1E0B /* StopWatchViewController.m */; };
 		E60ADA091A1D7E8800FA1E0B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA081A1D7E8800FA1E0B /* Images.xcassets */; };
-		E60ADA0C1A1D7E8800FA1E0B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA0A1A1D7E8800FA1E0B /* LaunchScreen.xib */; };
 		E60ADA181A1D7E8800FA1E0B /* StopwatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E60ADA171A1D7E8800FA1E0B /* StopwatchTests.m */; };
+		E60ADA221A1D7EE400FA1E0B /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA211A1D7EE400FA1E0B /* Main.xib */; };
+		E60ADA241A1D7FD000FA1E0B /* StopWatchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		E60AD9FD1A1D7E8800FA1E0B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E60AD9FF1A1D7E8800FA1E0B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E60ADA001A1D7E8800FA1E0B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E60ADA021A1D7E8800FA1E0B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E60ADA031A1D7E8800FA1E0B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		E60ADA061A1D7E8800FA1E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E60ADA021A1D7E8800FA1E0B /* StopWatchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StopWatchViewController.h; sourceTree = "<group>"; };
+		E60ADA031A1D7E8800FA1E0B /* StopWatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopWatchViewController.m; sourceTree = "<group>"; };
 		E60ADA081A1D7E8800FA1E0B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E60ADA0B1A1D7E8800FA1E0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E60ADA111A1D7E8800FA1E0B /* StopwatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StopwatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E60ADA161A1D7E8800FA1E0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60ADA171A1D7E8800FA1E0B /* StopwatchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StopwatchTests.m; sourceTree = "<group>"; };
+		E60ADA211A1D7EE400FA1E0B /* Main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
+		E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StopWatchView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,12 +83,12 @@
 			children = (
 				E60AD9FF1A1D7E8800FA1E0B /* AppDelegate.h */,
 				E60ADA001A1D7E8800FA1E0B /* AppDelegate.m */,
-				E60ADA021A1D7E8800FA1E0B /* ViewController.h */,
-				E60ADA031A1D7E8800FA1E0B /* ViewController.m */,
-				E60ADA051A1D7E8800FA1E0B /* Main.storyboard */,
+				E60ADA021A1D7E8800FA1E0B /* StopWatchViewController.h */,
+				E60ADA031A1D7E8800FA1E0B /* StopWatchViewController.m */,
 				E60ADA081A1D7E8800FA1E0B /* Images.xcassets */,
-				E60ADA0A1A1D7E8800FA1E0B /* LaunchScreen.xib */,
 				E60AD9FB1A1D7E8800FA1E0B /* Supporting Files */,
+				E60ADA211A1D7EE400FA1E0B /* Main.xib */,
+				E60ADA231A1D7FD000FA1E0B /* StopWatchView.xib */,
 			);
 			path = Stopwatch;
 			sourceTree = "<group>";
@@ -199,9 +199,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E60ADA071A1D7E8800FA1E0B /* Main.storyboard in Resources */,
-				E60ADA0C1A1D7E8800FA1E0B /* LaunchScreen.xib in Resources */,
+				E60ADA221A1D7EE400FA1E0B /* Main.xib in Resources */,
 				E60ADA091A1D7E8800FA1E0B /* Images.xcassets in Resources */,
+				E60ADA241A1D7FD000FA1E0B /* StopWatchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E60ADA041A1D7E8800FA1E0B /* ViewController.m in Sources */,
+				E60ADA041A1D7E8800FA1E0B /* StopWatchViewController.m in Sources */,
 				E60ADA011A1D7E8800FA1E0B /* AppDelegate.m in Sources */,
 				E60AD9FE1A1D7E8800FA1E0B /* main.m in Sources */,
 			);
@@ -242,25 +242,6 @@
 			targetProxy = E60ADA121A1D7E8800FA1E0B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		E60ADA051A1D7E8800FA1E0B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E60ADA061A1D7E8800FA1E0B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E60ADA0A1A1D7E8800FA1E0B /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E60ADA0B1A1D7E8800FA1E0B /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E60ADA191A1D7E8800FA1E0B /* Debug */ = {
